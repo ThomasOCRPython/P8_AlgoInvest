@@ -25,12 +25,12 @@ def get_choice():
     elif choice == "3":
         tab_action_3 = read_csv('data/dataset1_Python+P7.csv')
         tab_action_4 = new_array(tab_action_3)
-        algo_loop_table(glouton, tab_action_4,"data_2")
+        glouton(tab_action_4)
 
     elif choice == "4":
         tab_action_4 = read_csv('data/dataset2_Python+P7.csv')
         tab_action_5 = new_array(clean_price(tab_action_4))
-        algo_loop_table(glouton, tab_action_5,"data_3")
+        glouton(tab_action_5)
         
     # elif self.choice == "5": 
 

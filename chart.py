@@ -19,9 +19,9 @@ def algo_loop_table(function, table,nom):
 
 def graph_figure(x,y,nom):
     name=nom
-    z = np.polyfit(x, y, 1)
-    p = np.poly1d(z)
-    plt.plot(x, p(x), "r")
+    # z = np.polyfit(x, y, 1)
+    # p = np.poly1d(z)
+    # plt.plot(x, p(x), "r")
     plt.plot(x,y)
     plt.xlabel('nb actions')
     plt.ylabel('time in ms')
