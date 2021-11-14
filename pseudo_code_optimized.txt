@@ -1,0 +1,49 @@
+ALGORITHME  optimized :
+
+Optimized algorithm to go through an action chart and give a combination of actions that do not exceed 500 euros and give the most profit
+
+CONSTANT : 
+price_max = 500;
+
+list tab_action [20] <- [{item1 string "name" <- Action_1 
+                         item2 integer "price" <- 20 
+                        item3 float "profit" <- 0.05
+                        },{...},...];
+list solution_gloutonne;
+list action
+
+float price_total;
+integer index;
+
+
+BEGIN
+       
+    table_triee <- sort function on the tab_action according to the profit key in descending order  
+    price_total <- 0
+    solution_gloutonne <- []
+    index <- 0
+    while index < gives the length of the table_triee and price_total < price_max 
+        action <- table_triee[index]
+        price_action <- action['price']
+        IF price_total + price_action <= price_max THEN
+            add to solution_gloutonne (action)
+            price_total <- price_total + price_action
+        ENDIF
+        index <- index + 1
+    ENDWHILE
+    WRITE 'prix total : ',price_total
+    WRITE "profit total", FUNCTION profit_total(solution_gloutonne)
+        
+        
+END
+
+FONCTION profit_total(table_action) : float
+    float profit_t <-  0
+       
+  BEGIN
+    FOR action in table_action
+        profit_t <- profit_t + action['profit']
+        return profit_t
+    ENDFOR
+  RETURN profit_t
+  END
